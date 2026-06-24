@@ -1,0 +1,10 @@
+<app-shared-table
+  title="Продукты"
+  role="waiter"
+  [columns]="columns"
+  [data]="products()"
+  (add)="addProduct()"
+  (dataChange)="onDataChange($event)"
+  (rowDelete)="onRowDelete($event)">
+</app-shared-table>
+

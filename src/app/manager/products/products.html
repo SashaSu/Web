@@ -1,0 +1,9 @@
+<app-shared-table
+  title="Продукты"
+  role="manager"
+  [columns]="columns"
+  [data]="products()"
+  (add)="addProduct()"
+  (dataChange)="onDataChange($event)"
+  (rowDelete)="onRowDelete($event)">
+</app-shared-table>

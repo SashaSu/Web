@@ -1,0 +1,9 @@
+<app-shared-table
+  title="Заказы"
+  role="chef"
+  [columns]="columns"
+  [data]="orders()"
+  (add)="addOrder()"
+  (dataChange)="onDataChange($event)"
+  (rowDelete)="onRowDelete($event)">
+</app-shared-table>

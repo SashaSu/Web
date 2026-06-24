@@ -1,0 +1,151 @@
+// .section-container {
+//   background: white;
+//   padding: 20px;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 0;
+//   overflow: hidden;
+// }
+
+// .header-section {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 20px;
+// }
+
+// h2 {
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: 600;
+//   font-size: 26px;
+//   color: #c62828;
+//   margin: 0;
+// }
+
+// .table-container {
+//   flex: 1;
+//   overflow: auto;
+//   border: 1px solid #e0e0e0;
+//   border-radius: 6px;
+// }
+
+// .audit-table {
+//   width: 100%;
+//   border-collapse: collapse;
+// }
+
+// .audit-table th {
+//   background: #f5f5f5;
+//   padding: 12px 16px;
+//   text-align: left;
+//   font-weight: 600;
+//   color: #333;
+//   border-bottom: 2px solid #e0e0e0;
+//   font-family: 'Montserrat', sans-serif;
+// }
+
+// .audit-table td {
+//   padding: 12px 16px;
+//   border-bottom: 1px solid #e0e0e0;
+//   vertical-align: top;
+// }
+
+// .col-id {
+//   width: 25%;
+//   min-width: 150px;
+//   font-family: monospace;
+//   font-size: 12px;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
+
+// .col-name {
+//   width: 20%;
+//   min-width: 120px;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
+
+// .col-quantity {
+//   width: 15%;
+//   min-width: 80px;
+//   text-align: center; // Выравнивание по центру для ячеек
+// }
+
+// // Заголовок колонки количества тоже по центру
+// .audit-table th.col-quantity {
+//   text-align: center;
+// }
+
+// .col-exp-date {
+//   width: 20%;
+//   min-width: 120px;
+// }
+
+// .col-delete-date {
+//   width: 20%;
+//   min-width: 120px;
+// }
+
+// // Адаптивность
+// @media (max-width: 768px) {
+//   .col-id {
+//     width: 20%;
+//     min-width: 120px;
+//     font-size: 10px;
+//   }
+  
+//   .col-name {
+//     width: 18%;
+//     min-width: 100px;
+//   }
+
+//   .col-quantity {
+//     width: 12%;
+//     min-width: 60px;
+//   }
+
+//   .col-exp-date {
+//     width: 20%;
+//     min-width: 100px;
+//   }
+
+//   .col-delete-date {
+//     width: 20%;
+//     min-width: 100px;
+//   }
+  
+//   .audit-table th,
+//   .audit-table td {
+//     padding: 8px 10px;
+//     font-size: 12px;
+//   }
+// }
+
+// // Для очень маленьких экранов
+// @media (max-width: 480px) {
+//   .col-id {
+//     display: none;
+//   }
+  
+//   .col-name {
+//     width: 25%;
+//   }
+  
+//   .col-quantity {
+//     width: 15%;
+//   }
+  
+//   .col-exp-date {
+//     width: 30%;
+//   }
+  
+//   .col-delete-date {
+//     width: 30%;
+//   }
+// }

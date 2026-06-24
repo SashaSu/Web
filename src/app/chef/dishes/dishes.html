@@ -1,0 +1,21 @@
+<div class="dishes-container">
+  <div *ngIf="error()" class="error-message">
+    {{ error() }}
+    <button (click)="clearError()">✕</button>
+  </div>
+  <!-- Добавьте кнопку для теста -->
+
+  <app-shared-table
+    title="Блюда"
+    role="chef"
+    [columns]="columns"
+    [data]="dishes()"
+    (add)="addDish()"
+  (dataChange)="onDataChange($event)"
+  (rowDelete)="onRowDelete($event)">
+  </app-shared-table>
+
+  <div *ngIf="loading()" class="loading-overlay">
+    <div class="spinner">Загрузка...</div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="role-container" [style.--header-bg]="theme().header" [style.--logout-bg]="theme().logoutButton" [style.--logout-hover]="theme().logoutButtonHover">
+  <header class="role-header">
+    <nav class="role-nav">
+      <button 
+        *ngFor="let item of menuItems"
+        class="nav-button" 
+        [class.active]="currentSection() === item.key"
+        (click)="showSection(item.key)">
+        {{ item.label }}
+      </button>
+    </nav>
+    <button class="logout-button" (click)="logout()">Выйти</button>
+  </header>
+
+  <main class="role-content">
+    <ng-content></ng-content>
+  </main>
+</div>
+

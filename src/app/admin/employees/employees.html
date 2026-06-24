@@ -1,0 +1,8 @@
+<app-shared-table
+  title="Сотрудники"
+  role="admin"
+  [columns]="columns"
+  [data]="employees"
+  (add)="addEmployee()"
+  (dataChange)="onDataChange($event)">
+</app-shared-table>

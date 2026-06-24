@@ -1,0 +1,9 @@
+<app-role-layout 
+  role="waiter"
+  [menuItems]="menuItems"
+  defaultSection="orders"
+  (sectionChange)="currentSection.set($event)">
+  <app-orders *ngIf="currentSection() === 'orders'"></app-orders>
+  <app-dishes *ngIf="currentSection() === 'dishes'"></app-dishes>
+  <app-products *ngIf="currentSection() === 'products'"></app-products>
+</app-role-layout>

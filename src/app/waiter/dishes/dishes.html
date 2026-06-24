@@ -1,0 +1,9 @@
+<app-shared-table
+  title="Блюда"
+  role="waiter"
+  [columns]="columns"
+  [data]="dishes()"
+  (add)="addDish()"
+  (dataChange)="onDataChange($event)"
+  (rowDelete)="onRowDelete($event)">
+</app-shared-table>

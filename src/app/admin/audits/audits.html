@@ -1,0 +1,8 @@
+<app-shared-table
+  title="Аудит"
+  role="admin"
+  [columns]="columns"
+  [data]="audits"
+  (add)="addAudit()"
+  (dataChange)="onDataChange($event)">
+</app-shared-table>

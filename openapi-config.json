@@ -1,0 +1,11 @@
+{
+    "npmName": "restaurant-api-client",
+    "npmVersion": "1.0.0",
+    "supportsES6": true,
+    "withInterfaces": true,
+    "modelPropertyNaming": "original",
+    "ngVersion": "16.0.0",
+    "providedInRoot": true,
+    "serviceSuffix": "ApiService",
+    "fileNaming": "kebab-case"
+  }

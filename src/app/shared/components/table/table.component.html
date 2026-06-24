@@ -1,0 +1,89 @@
+<div class="section-container" [style.--primary]="theme.primary" (click)="onContainerClick()">
+  <div class="header-section">
+    <h2 [style.color]="theme.primary">{{ title }}</h2>
+    <button *ngIf="showAdd" class="add-button" [style.background]="theme.primary" (click)="onAdd()">
+      {{ addLabel }}
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th *ngFor="let col of columns"
+              [style.width]="col.width"
+              [style.minWidth]="col.minWidth"
+              [style.textAlign]="col.align || 'left'">
+            {{ col.title }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data; trackBy: trackById"
+            (contextmenu)="onRowContextMenu($event, row)">
+          <td *ngFor="let col of columns" [style.textAlign]="col.align || 'left'">
+            <!-- ID field or non-editable fields - read only but copyable -->
+            <span *ngIf="col.key === 'id' || col.editable === false" 
+                  class="readonly-field copyable-field"
+                  [title]="col.key === 'id' ? 'Нажмите для копирования ID' : ''"
+                  (click)="copyToClipboard(row[col.key], col.key === 'id')">
+              {{ row[col.key] }}
+            </span>
+            
+            <ng-container *ngIf="col.key !== 'id' && col.editable !== false" [ngSwitch]="col.type || 'text'">
+              <input *ngSwitchCase="'number'"
+                     type="number"
+                     class="editable-field"
+                     [ngModel]="row[col.key]"
+                     (ngModelChange)="onInputChange(row, col, $event)"
+                     (blur)="onFieldBlur(row, col)" />
+
+              <input *ngSwitchCase="'date'"
+                     type="date"
+                     class="editable-field"
+                     [ngModel]="formatDate(row[col.key], col)"
+                     (ngModelChange)="onDateChange(row, col, $event)"
+                     (blur)="onFieldBlur(row, col)" />
+
+              <input *ngSwitchCase="'datetime'"
+                     type="datetime-local"
+                     class="editable-field"
+                     [ngModel]="formatDate(row[col.key], col)"
+                     (ngModelChange)="onDateChange(row, col, $event)"
+                     (blur)="onFieldBlur(row, col)" />
+
+              <select *ngSwitchCase="'select'"
+                      class="editable-field"
+                      [ngModel]="row[col.key]"
+                      (ngModelChange)="onSelectChange(row, col, $event)"
+                      (blur)="onFieldBlur(row, col)">
+                <option *ngFor="let opt of col.options" [value]="opt.value">
+                  {{ opt.label }}
+                </option>
+              </select>
+
+              <input *ngSwitchDefault
+                     type="text"
+                     class="editable-field"
+                     [ngModel]="row[col.key]"
+                     (ngModelChange)="onInputChange(row, col, $event)"
+                     (blur)="onFieldBlur(row, col)" />
+            </ng-container>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- контекстное меню удаления -->
+    <div *ngIf="contextMenuVisible"
+         class="context-menu"
+         [style.left.px]="contextMenuX"
+         [style.top.px]="contextMenuY"
+         (click)="$event.stopPropagation()">
+      <button class="context-menu-item" (click)="onDeleteRowClick()">
+        Удалить строку
+      </button>
+    </div>
+  </div>
+</div>
+

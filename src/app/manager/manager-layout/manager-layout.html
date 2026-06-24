@@ -1,0 +1,7 @@
+<app-role-layout 
+  role="manager"
+  [menuItems]="menuItems"
+  defaultSection="products"
+  (sectionChange)="currentSection.set($event)">
+  <app-products *ngIf="currentSection() === 'products'"></app-products>
+</app-role-layout>

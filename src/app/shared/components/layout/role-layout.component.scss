@@ -1,0 +1,65 @@
+.role-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: var(--header-bg);
+  color: white;
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.role-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-button {
+  padding: 12px 24px;
+  background: transparent;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+
+  &:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  &.active {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.3);
+  }
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background: var(--logout-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+
+  &:hover {
+    background: var(--logout-hover);
+  }
+}
+
+.role-content {
+  flex: 1;
+  padding: 20px;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+

@@ -1,0 +1,9 @@
+<app-shared-table
+  title="Заказы"
+  role="waiter"
+  [columns]="columns"
+  [data]="orders()"
+  (add)="addOrder()"
+  (dataChange)="onDataChange($event)"
+  (rowDelete)="onRowDelete($event)">
+</app-shared-table>

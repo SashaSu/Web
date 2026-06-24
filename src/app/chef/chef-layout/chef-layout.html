@@ -1,0 +1,9 @@
+<app-role-layout 
+  role="chef"
+  [menuItems]="menuItems"
+  [defaultSection]="currentSection()"
+  (sectionChange)="onSectionChange($event)">
+  <app-orders *ngIf="currentSection() === 'orders'"></app-orders>
+  <app-dishes *ngIf="currentSection() === 'dishes'"></app-dishes>
+  <app-products *ngIf="currentSection() === 'products'"></app-products>
+</app-role-layout>

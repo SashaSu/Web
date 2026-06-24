@@ -1,0 +1,39 @@
+<div class="login-container">
+  <div class="login-form">
+    <h1 class="login-title">Вход в систему</h1>
+    
+    <div *ngIf="error()" class="error-message">
+      {{ error() }}
+    </div>
+    
+    <div class="input-group">
+      <label>Логин</label>
+      <input 
+        type="text" 
+        placeholder="Введите логин" 
+        [value]="username()"
+        (input)="onUsernameChange($any($event.target).value)"
+        [disabled]="loading()">
+    </div>
+    
+    <div class="input-group">
+      <label>Пароль</label>
+      <input 
+        type="password" 
+        placeholder="Введите пароль" 
+        [value]="password()"
+        (input)="onPasswordChange($any($event.target).value)"
+        [disabled]="loading()"
+        (keyup.enter)="onLogin()">
+    </div>
+    
+    <button 
+      class="login-button" 
+      (click)="onLogin()"
+      [disabled]="loading()">
+      <span *ngIf="!loading()">Войти</span>
+      <span *ngIf="loading()">Вход...</span>
+    </button>
+  </div>
+</div>
+

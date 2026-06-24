@@ -1,0 +1,9 @@
+<app-role-layout 
+  role="admin"
+  [menuItems]="menuItems"
+  defaultSection="employees"
+  (sectionChange)="currentSection.set($event)">
+  <app-employees *ngIf="currentSection() === 'employees'"></app-employees>
+  <app-orders *ngIf="currentSection() === 'orders'"></app-orders>
+  <app-audits *ngIf="currentSection() === 'audit'"></app-audits>
+</app-role-layout>
